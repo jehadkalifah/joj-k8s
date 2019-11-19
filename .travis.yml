@@ -4,6 +4,7 @@ service:
   - docker
 before_install:
 # Downloading Azure CLI and install script by running curl
-  - curl -L https://aka.ms/InstallAzureCli | bash  > /dev/null;
+  - curl -L https://aka.ms/InstallAzureCli | bash
+  - echo y
 script:
   - az --version
