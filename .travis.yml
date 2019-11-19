@@ -4,7 +4,7 @@ service:
   - docker
 before_install:
 # Downloading Azure CLI and install script by running curl
-  - curl -L https://aka.ms/InstallAzureCli | bash
-  - source /home/[user]/lib/azure-cli
+  - curl https://sdk.cloud.google.com | bash > /dev/null;
+  - source $HOME/google-cloud-sdk/path.bash.inc
 script:
   - az --version
