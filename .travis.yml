@@ -23,7 +23,7 @@ before_install:
   # Install Kubectl command
   - sudo az aks install-cli     
 script:
- 
+  - docker run -d --name azure-vote-front microsoft/azure-vote-front:v1
 deploy:
   provider: script
     script: bash scripts/deploy.sh
