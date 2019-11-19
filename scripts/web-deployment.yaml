@@ -1,0 +1,20 @@
+apiVersio: apps/v1
+kind: Deployment
+metadata: 
+  name: web-deployment
+spec:
+  replicas: 3
+  metadata:
+    selector:
+      matchLabels:
+        component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: webcontainer
+          image: jehaddocker82/test001
+          ports:
+            - containerPort: 80
