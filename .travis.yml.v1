@@ -19,8 +19,6 @@ before_install:
        sudo tee /etc/apt/sources.list.d/azure-cli.list
   # Update repository information and install the azure-cli package
   - sudo apt-get update
-  - sudo apt-get install azure-cli
-  # Install Kubectl command
-  - az aks install-cli     
+  - sudo apt-get install azure-cli     
 script:
-  - kubectl version
+  - az --version
