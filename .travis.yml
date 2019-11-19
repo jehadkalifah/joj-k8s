@@ -24,3 +24,8 @@ before_install:
   - sudo az aks install-cli     
 script:
   - docker run -d --name azure-vote-front microsoft/azure-vote-front:v1
+depoly:
+  provider: script
+  script: bash ./scripts/deploy.sh
+  on:
+    branch: master  
