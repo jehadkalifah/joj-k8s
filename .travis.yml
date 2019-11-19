@@ -23,7 +23,7 @@ before_install:
   # Install Kubectl command
   - sudo az aks install-cli     
 install: 
-  - docker build -t jehaddocker82/test002 -f script/dockerfile
+  - docker build -t jehaddocker82/test002 -f scripts/dockerfile
 depoly:
   provider: script
   script: bash scripts/deploy.sh
