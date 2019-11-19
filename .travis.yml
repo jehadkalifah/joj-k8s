@@ -4,7 +4,7 @@ service:
   - docker
 env:
   global:
-    - disable_confirm_prompt=Yes
+    - disable_confirm_prompt=1
 before_install:
 # Downloading Azure CLI and install script by running curl
   - curl -L https://aka.ms/InstallAzureCli | bash
