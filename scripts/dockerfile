@@ -1,0 +1,9 @@
+FROM centos
+RUN yum -y install httpd unzip
+WORKDIR /var/www/html
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page242/solution.zip .
+RUN unzip solution.zip \
+&& mv solution/* . \
+&& rm -r solution solution.zip
+EXPOSE 80
+CMD /usr/sbin/apachectl -DFOREGROUND
