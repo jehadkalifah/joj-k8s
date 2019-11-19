@@ -23,9 +23,7 @@ before_install:
   # Install Kubectl command
   - sudo az aks install-cli     
 script:
-
-
-
+ 
 deploy:
   provider: script
     script: bash scripts/deploy.sh
