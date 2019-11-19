@@ -4,9 +4,8 @@ metadata:
   name: web-deployment
 spec:
   replicas: 3
-  metadata:
-    selector:
-      matchLabels:
+  selector:
+    matchLabels:
         component: web
   template:
     metadata:
