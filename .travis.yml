@@ -22,9 +22,10 @@ before_install:
   - sudo apt-get install azure-cli
   # Install Kubectl command
   - sudo az aks install-cli     
-
+install: 
+  - docker build -t jehaddocker82/test002 -f script/dockerfile
 depoly:
   provider: script
-  script: bash ./scripts/deploy.sh
+  script: bash scripts/deploy.sh
   on:
     branch: master  
