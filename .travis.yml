@@ -21,6 +21,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install azure-cli
   # Install Kubectl command
-  - az aks install-cli     
+  - sudo az aks install-cli     
 script:
   - kubectl version
