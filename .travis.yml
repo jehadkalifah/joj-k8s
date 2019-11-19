@@ -22,10 +22,7 @@ before_install:
   - sudo apt-get install azure-cli
   # Install Kubectl command
   - sudo az aks install-cli     
-install: 
-  - docker build -t jehaddocker82/test002 -f ./scripts/dockerfile ./scripts
-depoly:
-  provider: script
-  script: bash ./scripts/deploy.sh
-  on:
-    branch: master  
+script: 
+  - az login --service-principal -u $AZURE_SP_USERNAME -p $AZURE_SP_PASSWORD --tenant $AZURE_SP_TENANT
+  - az aks get-credentials --resource-group $AZURE_AKS_RESOURCE_GROUP --name $Azure_AKS_Name
+  - kubectl get nodes
